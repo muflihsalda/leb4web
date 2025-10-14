@@ -1,146 +1,249 @@
-# leb4web
+🧾 LAPORAN PRAKTIKUM 4 – CSS Layout
 
-# Praktikum 4 - CSS Layout
+Nama: (isi nama kamu)
+NIM: (isi NIM kamu)
+Kelas: (isi kelas kamu)
+Mata Kuliah: Pemrograman Web
+Dosen Pengampu: Agung Nugroho, S.Kom., M.Kom
+Universitas: Universitas Pelita Bangsa
 
-**Mata Kuliah:** Pemrograman Web  
-**Dosen Pengampu:** Agung Nugroho, S.Kom., M.Kom  
-**Universitas Pelita Bangsa**  
-**Nama:** Muflih Salda Maulana  
-**NIM:** 312410527
----
+🎯 Tujuan Praktikum
 
-## 🧩 Tujuan Praktikum
-1. Mahasiswa mampu memahami struktur dasar pembuatan layout web.
-2. Mahasiswa mampu memahami konsep box element (margin, padding, border, content).
-3. Mahasiswa mampu menerapkan CSS Float untuk mengatur posisi elemen.
-4. Mahasiswa mampu menggunakan elemen semantik HTML5.
-5. Mahasiswa mampu membuat layout web sederhana menggunakan CSS.
+Mahasiswa memahami struktur dasar pembuatan layout web.
 
----
+Mahasiswa memahami konsep box element (margin, padding, border, content).
 
-## 📁 Struktur Folder
-Lab4Web/
-│
-├── home.html
-├── about.html
-├── kontak.html
-└── style.css
+Mahasiswa mampu menggunakan CSS Float untuk mengatur tata letak elemen.
+
+Mahasiswa memahami penggunaan HTML5 Semantic Element.
+
+Mahasiswa dapat membuat layout web sederhana dengan tampilan profesional.
+
+🧰 Peralatan dan Bahan
+
+Text Editor: Visual Studio Code
+
+Browser: Google Chrome / Microsoft Edge
+
+Bahasa: HTML5 & CSS3
+
+Folder proyek: Lab4Web
+
+🧩 Langkah-Langkah Praktikum
+1️⃣ Membuat Struktur Awal HTML
+
+Membuat file home.html dengan struktur dasar HTML5 dan menautkan style.css.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Sederhana</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <header><h1>Layout Sederhana</h1></header>
+    </div>
+</body>
+</html>
 
 
-Semua halaman (`home.html`, `about.html`, dan `kontak.html`) menggunakan file CSS yang sama (`style.css`) agar tampilan konsisten di seluruh halaman.
+Penjelasan:
+Bagian ini merupakan struktur awal dokumen HTML dengan container sebagai pembungkus utama layout.
 
----
+2️⃣ Menambahkan Navigasi
 
-## 🌐 Hasil dan Penjelasan
+Menambahkan elemen <nav> berisi link navigasi ke halaman lain.
 
-### 1️⃣ **Halaman Home (`home.html`)**
-Halaman utama berisi:
-- Header dan navigasi menu.
-- Hero section (tampilan banner utama).
-- Konten utama (`#main`) dengan tiga box (kolom).
-- Sidebar berisi widget link dan text.
-- Footer di bagian bawah halaman.
+<nav>
+    <a href="home.html" class="active">Home</a>
+    <a href="artikel.html">Artikel</a>
+    <a href="about.html">About</a>
+    <a href="kontak.html">Kontak</a>
+</nav>
 
-📸 **Screenshot:**
-_(tambahkan screenshot tampilan home.html di sini)_
 
----
+Penjelasan:
+Tag <nav> berfungsi sebagai navigasi utama untuk berpindah antar halaman. Class active digunakan untuk menandai halaman yang sedang dibuka.
 
-### 2️⃣ **Halaman About (`about.html`)**
-Berisi:
-- Deskripsi singkat tentang website/tim.
-- Bagian portfolio dengan tiga project.
-- Sidebar berisi informasi tambahan.
+3️⃣ Membuat Hero Section
 
-📸 **Screenshot:**
-_(tambahkan screenshot tampilan about.html di sini)_
+Membuat area banner utama (Hero Panel) untuk memperkenalkan isi website.
 
----
+<section id="hero">
+    <h1>Hello World!</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+    <a href="home.html" class="btn btn-large">Learn more &raquo;</a>
+</section>
 
-### 3️⃣ **Halaman Kontak (`kontak.html`)**
-Berisi:
-- Hero section dengan deskripsi kontak.
-- Formulir isian (Nama, Email, Pesan).
-- Sidebar berisi informasi kontak (email, telp, alamat).
 
-📸 **Screenshot:**
-_(tambahkan screenshot tampilan kontak.html di sini)_
+Penjelasan:
+Bagian ini biasanya ditempatkan di bawah navigasi dan berfungsi sebagai elemen visual utama dari halaman.
 
----
+4️⃣ Menambahkan Konten Utama dan Sidebar
 
-## 🎨 **Penjelasan CSS Utama**
-Beberapa bagian penting dalam `style.css`:
+Membagi halaman menjadi dua bagian utama dengan float:
 
-### 🔹 Reset dan Font
-```css
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+Main Content (#main)
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+Sidebar (#sidebar)
+
+<section id="wrapper">
+    <section id="main">
+        <div class="row">
+            <div class="box">
+                <img src="https://dummyimage.com/120/db7d25/fff.png" alt="" class="image-circle">
+                <h3>Heading</h3>
+                <p>Deskripsi singkat konten.</p>
+            </div>
+        </div>
+    </section>
+
+    <aside id="sidebar">
+        <div class="widget-box">
+            <h3 class="title">Widget Header</h3>
+            <ul>
+                <li><a href="#">Widget Link</a></li>
+                <li><a href="#">Widget Link</a></li>
+            </ul>
+        </div>
+    </aside>
+</section>
+
+
+Penjelasan:
+Bagian ini mengatur layout dua kolom menggunakan float. Elemen aside digunakan untuk menempatkan konten tambahan di sisi kanan.
+
+5️⃣ Menambahkan Artikel dan Divider
+
+Membuat bagian artikel dengan tag <article> dan garis pembatas <hr class="divider" />.
+
+<hr class="divider" />
+<article class="entry">
+    <h2>Featurette Heading</h2>
+    <img src="https://dummyimage.com/150/7b8a70/fff.png" alt="">
+    <p>Isi artikel atau deskripsi konten utama...</p>
+</article>
+
+
+Penjelasan:
+Elemen <article> menandakan isi konten utama.
+<hr> digunakan sebagai pemisah antar bagian agar lebih rapi.
+
+6️⃣ Membuat Halaman About
+
+Membuat halaman baru about.html berisi deskripsi dan portfolio.
+
+Isi utamanya seperti:
+
+<section id="hero">
+  <h1>Tentang Kami</h1>
+  <p>Informasi tentang profil dan portfolio.</p>
+</section>
+
+
+Penjelasan:
+Halaman ini menampilkan deskripsi singkat, serta contoh karya atau project yang pernah dibuat.
+
+7️⃣ Membuat Halaman Kontak
+
+Membuat halaman baru kontak.html dengan form input.
+
+<form class="contact-form">
+  <label for="nama">Nama:</label>
+  <input type="text" id="nama" name="nama">
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email">
+
+  <label for="pesan">Pesan:</label>
+  <textarea id="pesan" name="pesan"></textarea>
+
+  <button type="submit">Kirim Pesan</button>
+</form>
+
+
+Penjelasan:
+Form ini berfungsi untuk mengumpulkan data dari pengguna, meskipun belum tersambung ke backend (simulasi tampilan saja).
+
+8️⃣ Membuat Footer
+
+Tambahkan footer di bagian bawah halaman.
+
+<footer>
+    <p>&copy; 2025 - Universitas Pelita Bangsa</p>
+</footer>
+
+
+Penjelasan:
+Footer berfungsi menampilkan informasi hak cipta atau kontak tambahan.
+
+9️⃣ Menulis Style CSS
+
+File style.css digunakan untuk mengatur tampilan setiap elemen agar layout terlihat rapi.
+
+Contoh potongan penting:
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #5a5a5a;
 }
-
-
-🔹 Struktur Layout
-#container {
-  width: 980px;
-  margin: 0 auto;
-  box-shadow: 0 0 1em #cccccc;
-}
-
-🔹 Navigasi
 nav {
-  background-color: #1f5faa;
+    background-color: #1f5faa;
 }
-nav a {
-  color: #fff;
-  padding: 15px 30px;
-  display: inline-block;
-  text-decoration: none;
-  font-weight: bold;
-}
-nav a.active,
-nav a:hover {
-  background-color: #2b83ea;
-}
-
-🔹 Hero Panel
 #hero {
-  background-color: #e4e4e5;
-  padding: 50px 20px;
-  margin-bottom: 20px;
+    background-color: #e4e4e5;
+    padding: 50px 20px;
 }
-
-🔹 Main & Sidebar
 #main {
-  float: left;
-  width: 640px;
-  padding: 20px;
+    float: left;
+    width: 640px;
+    padding: 20px;
 }
 #sidebar {
-  float: left;
-  width: 260px;
-  padding: 20px;
+    float: left;
+    width: 260px;
+    padding: 20px;
+}
+footer {
+    clear: both;
+    background-color: #1d1d1d;
+    color: #eee;
+    text-align: center;
+    padding: 20px;
 }
 
-🔹 Footer
-footer {
-  clear: both;
-  background-color: #1d1d1d;
-  color: #eee;
-  text-align: center;
-  padding: 20px;
-}
+
+Penjelasan:
+Setiap bagian diberi styling tersendiri agar posisi, warna, dan jarak antar elemen tampak proporsional.
+
+📸 Hasil Tampilan Akhir
+
+Halaman Home
+
+Menampilkan header, navigasi, hero, main content, sidebar, dan footer.
+(sertakan screenshot di laporan)
+
+Halaman About
+
+Menampilkan deskripsi dan portfolio proyek.
+(sertakan screenshot di laporan)
+
+Halaman Kontak
+
+Menampilkan form isian nama, email, pesan.
+(sertakan screenshot di laporan)
 
 ✅ Kesimpulan
 
-Dalam praktikum ini saya telah:
+Dari praktikum ini dapat disimpulkan bahwa:
 
-Membuat layout web sederhana menggunakan HTML5 dan CSS.
+Layout web dapat dibuat dengan mengombinasikan HTML5 semantic element dan CSS Float.
 
-Menerapkan konsep box model, float, dan clearfix.
+Elemen seperti header, nav, section, article, aside, dan footer membantu membentuk struktur layout yang terorganisir.
 
-Membuat beberapa halaman web terhubung melalui menu navigasi.
+Dengan satu file CSS, tampilan setiap halaman dapat dijaga konsistensinya.
 
-Menerapkan gaya yang konsisten melalui satu file CSS (style.css).
+Mahasiswa mampu membuat layout web sederhana yang responsif dan menarik secara visual.
