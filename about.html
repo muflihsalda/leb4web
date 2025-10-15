@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Layout Sederhana</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="container">
+
+    <!-- HEADER -->
+    <header>
+      <h1>Layout Sederhana</h1>
+    </header>
+
+    <!-- NAVIGASI -->
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="artikel.html">Artikel</a>
+      <a href="about.html" class="active">About</a>
+      <a href="kontak.html">Kontak</a>
+    </nav>
+
+    <!-- HERO / INTRO -->
+    <section id="hero">
+      <h1>Tentang Kami</h1>
+      <p>Halaman ini berisi informasi singkat mengenai kami, visi, misi, dan portfolio yang kami miliki.</p>
+    </section>
+
+    <!-- KONTEN UTAMA -->
+    <section id="wrapper">
+      <section id="main">
+        <article class="entry">
+          <h2>Deskripsi Singkat</h2>
+          <p>Kami adalah tim pengembang web yang fokus pada pembelajaran desain layout, pengembangan front-end, dan integrasi backend menggunakan teknologi modern.</p>
+          <p>Tujuan kami adalah membantu mahasiswa memahami struktur dasar layout, CSS Float, dan HTML5 Semantic Elements dengan proyek nyata seperti ini.</p>
+        </article>
+
+        <hr class="divider" />
+
+        <article class="entry">
+          <h2>Portfolio</h2>
+          <div class="row">
+            <div class="box">
+              <img src="https://dummyimage.com/150/db7d25/fff.png" class="image-circle" alt="">
+              <h3>Project 1</h3>
+              <p>Website sederhana menggunakan HTML & CSS.</p>
+            </div>
+            <div class="box">
+              <img src="https://dummyimage.com/150/3e73e6/fff.png" class="image-circle" alt="">
+              <h3>Project 2</h3>
+              <p>Aplikasi berbasis PHP dan MySQL.</p>
+            </div>
+            <div class="box">
+              <img src="https://dummyimage.com/150/71e6d4/fff.png" class="image-circle" alt="">
+              <h3>Project 3</h3>
+              <p>Desain UI/UX interaktif dengan Figma.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- SIDEBAR -->
+      <aside id="sidebar">
+        <div class="widget-box">
+          <h3 class="title">Informasi Tambahan</h3>
+          <p>Kami juga menyediakan materi tambahan dan tutorial web development bagi pemula hingga menengah.</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy; 2025 - Universitas Pelita Bangsa</p>
+    </footer>
+  </div>
+</body>
+</html>
