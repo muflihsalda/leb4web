@@ -1,55 +1,22 @@
+# lab4web
 
-# 🧾 **LAPORAN PRAKTIKUM 4 – CSS Layout**
+# Praktikum 4: CSS Layout
+<p>Nama  :Muflih Salda Maulana</p>
+<p>Nim  :312410527</p>
+<p>Kelas  :TI.24.A5</p>
 
-**Nama:** *(Muflih Salda Maulana)*
-
-**NIM:** *(312410527)*
-
-**Kelas:** *(TI.24.A5)*
-
-**Mata Kuliah:** Pemrograman Web
-
-**Dosen Pengampu:** Agung Nugroho, S.Kom., M.Kom
-
-**Universitas Pelita Bangsa**
-
----
-
-## 🎯 **Tujuan Praktikum**
-
+## Tujuan
 1. Memahami struktur dasar pembuatan layout web.
-2. Mempelajari konsep **box model**: margin, padding, border, dan content.
-3. Menerapkan **CSS Float** untuk mengatur posisi elemen.
-4. Menggunakan elemen semantik HTML5 (`header`, `nav`, `section`, `article`, `footer`).
-5. Membuat layout web sederhana yang terstruktur dan konsisten.
+2. Memahami konsep box element.
+3. Memahami penggunaan CSS float dan clear.
+4. Memahami HTML5 semantic element.
+5. Membuat layout web sederhana menggunakan CSS.
 
 ---
 
-## 🧰 **Peralatan dan Bahan**
-
-* **Text Editor:** Visual Studio Code
-* **Browser:** Google Chrome / Edge
-* **Bahasa:** HTML5 dan CSS3
-* **Struktur Folder:**
-
-  ```
-  Lab4Web/
-  ├── home.html
-  ├── about.html
-  ├── kontak.html
-  └── style.css
-  ```
-
----
-
-## 🧩 **Langkah-Langkah Praktikum**
-
----
-
-### **1️⃣ Membuat Struktur Awal HTML**
-
-Buka Visual Studio Code → buat folder `Lab4Web`.
-Di dalamnya buat file baru `home.html`.
+## Tahap 1 – Membuat Struktur Dasar HTML
+Langkah pertama adalah membuat file **home.html** berisi kerangka HTML dasar dengan elemen:
+`<header>`, `<nav>`, `<section>`, dan `<footer>`.
 
 ```html
 <!DOCTYPE html>
@@ -58,290 +25,216 @@ Di dalamnya buat file baru `home.html`.
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Layout Sederhana</title>
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="container">
-    <header><h1>Layout Sederhana</h1></header>
-  </div>
+  <header><h1>Layout Sederhana</h1></header>
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="artikel.html">Artikel</a>
+    <a href="about.html">About</a>
+    <a href="kontak.html">Kontak</a>
+  </nav>
+  <footer>© 2021 - Universitas Pelita Bangsa</footer>
 </body>
 </html>
-```
+````
 
-🖼️ **Gambar 1.1** – Tampilan awal `home.html` di browser
-*(contoh: hasil awal hanya teks “Layout Sederhana”)*
-![Gambar 1.1](screenshots/gambar1.png)
+**Hasil Tahap 1:**
+Tampilan masih polos tanpa CSS.
 
----
-
-### **2️⃣ Menambahkan Navigasi (Menu)**
-
-Tambahkan elemen `<nav>` di bawah header:
-
-```html
-<nav>
-  <a href="home.html" class="active">Home</a>
-  <a href="artikel.html">Artikel</a>
-  <a href="about.html">About</a>
-  <a href="kontak.html">Kontak</a>
-</nav>
-```
-
-🖼️ **Gambar 2.1** – Tampilan menu navigasi pada browser
-![Gambar 2.1](screenshots/gambar2.png)
-
-**Penjelasan:**
-Tag `<nav>` digunakan untuk membuat menu utama website.
-Class `active` digunakan menandai halaman yang sedang aktif.
+<img width="672" height="298" alt="layout sederhana1" src="https://github.com/user-attachments/assets/79e34b5f-7ee8-4c8f-a98d-7660eb3de3f7" />
 
 ---
 
-### **3️⃣ Membuat Hero Section (Banner Utama)**
+## Tahap 2 – Menambahkan File CSS dan Styling Dasar
 
-Tambahkan kode berikut di bawah `<nav>`:
-
-```html
-<section id="hero">
-  <h1>Hello World!</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
-  <a href="home.html" class="btn btn-large">Learn more &raquo;</a>
-</section>
-```
-
-🖼️ **Gambar 3.1** – Tampilan hero/banner utama
-![Gambar 3.1](screenshots/gambar3.png)
-
-**Penjelasan:**
-Bagian ini menampilkan teks utama dan tombol untuk memperkenalkan isi website.
-
----
-
-### **4️⃣ Membuat Konten Utama dan Sidebar**
-
-Tambahkan struktur berikut di bawah hero section:
-
-```html
-<section id="wrapper">
-  <section id="main">
-    <div class="row">
-      <div class="box">
-        <img src="https://dummyimage.com/120/db7d25/fff.png" alt="" class="image-circle">
-        <h3>Heading</h3>
-        <p>Deskripsi singkat konten utama.</p>
-      </div>
-      <div class="box">
-        <img src="https://dummyimage.com/120/3e73e6/fff.png" alt="" class="image-circle">
-        <h3>Heading</h3>
-        <p>Deskripsi singkat konten utama.</p>
-      </div>
-    </div>
-  </section>
-
-  <aside id="sidebar">
-    <div class="widget-box">
-      <h3 class="title">Widget Header</h3>
-      <ul>
-        <li><a href="#">Widget Link 1</a></li>
-        <li><a href="#">Widget Link 2</a></li>
-      </ul>
-    </div>
-  </aside>
-</section>
-```
-
-🖼️ **Gambar 4.1** – Tampilan dua kolom (konten dan sidebar)
-![Gambar 4.1](screenshots/gambar4.png)
-
-**Penjelasan:**
-
-* Elemen `#main` berisi konten utama.
-* Elemen `#sidebar` digunakan untuk menampilkan widget tambahan.
-* Posisi diatur dengan **CSS Float**.
-
----
-
-### **5️⃣ Menambahkan Artikel dan Divider**
-
-Tambahkan di bawah konten utama:
-
-```html
-<hr class="divider" />
-<article class="entry">
-  <h2>Featurette Heading</h2>
-  <img src="https://dummyimage.com/150/7b8a70/fff.png" alt="">
-  <p>Isi artikel utama...</p>
-</article>
-```
-
-🖼️ **Gambar 5.1** – Tampilan artikel dengan pembatas garis
-![Gambar 5.1](screenshots/gambar5.png)
-
-**Penjelasan:**
-Elemen `<article>` digunakan untuk konten artikel, sedangkan `<hr>` memberi garis pemisah antar bagian.
-
----
-
-### **6️⃣ Membuat Halaman About**
-
-Buat file baru **`about.html`**, lalu isi dengan:
-
-```html
-<section id="hero">
-  <h1>Tentang Kami</h1>
-  <p>Informasi tentang tim pengembang web, visi dan misi.</p>
-</section>
-```
-
-🖼️ **Gambar 6.1** – Tampilan halaman About
-![Gambar 6.1](screenshots/gambar6.png)
-
-**Penjelasan:**
-Halaman ini menampilkan deskripsi singkat dan contoh portfolio dari pembuat web.
-
----
-
-### **7️⃣ Membuat Halaman Kontak**
-
-Buat file baru **`kontak.html`**, lalu tambahkan form berikut:
-
-```html
-<section id="hero">
-  <h1>Hubungi Kami</h1>
-  <p>Silakan isi form di bawah ini.</p>
-</section>
-
-<form class="contact-form">
-  <label for="nama">Nama:</label>
-  <input type="text" id="nama" name="nama">
-
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email">
-
-  <label for="pesan">Pesan:</label>
-  <textarea id="pesan" name="pesan"></textarea>
-
-  <button type="submit">Kirim Pesan</button>
-</form>
-```
-
-🖼️ **Gambar 7.1** – Tampilan form kontak
-![Gambar 7.1](screenshots/gambar7.png)
-
-**Penjelasan:**
-Form digunakan untuk menampung input dari pengunjung, meskipun belum disambungkan ke server.
-
----
-
-### **8️⃣ Menambahkan Footer**
-
-Tambahkan di bagian paling bawah semua halaman:
-
-```html
-<footer>
-  <p>&copy; 2025 - Universitas Pelita Bangsa</p>
-</footer>
-```
-
-🖼️ **Gambar 8.1** – Tampilan footer di bagian bawah halaman
-![Gambar 8.1](screenshots/gambar8.png)
-
-**Penjelasan:**
-Footer berisi hak cipta atau informasi tambahan.
-
----
-
-### **9️⃣ Menulis File `style.css`**
-
-Buat file `style.css` di folder yang sama dan isi dengan:
+Buat file **style.css** lalu hubungkan ke `home.html`.
+Tambahkan pengaturan font, margin, dan header agar tampilan lebih rapi.
 
 ```css
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; }
 body {
   font-family: 'Open Sans', sans-serif;
   color: #5a5a5a;
 }
-
-#container {
-  width: 980px;
-  margin: 0 auto;
-  box-shadow: 0 0 1em #ccc;
+header h1 {
+  color: #b5b5b5;
+  margin: 20px 10px;
 }
+```
 
-/* Header & Nav */
-header { padding: 20px; }
-nav { background-color: #1f5faa; }
+**Hasil Tahap 2:**
+Teks menjadi lebih halus dan tata letak mulai terlihat rapi.
+
+<img width="679" height="290" alt="layout sederhana2" src="https://github.com/user-attachments/assets/79501ed0-4b93-4b67-992c-72b5d62e63f7" />
+
+---
+
+## Tahap 3 – Membuat Navigasi
+
+Tambahkan CSS untuk membuat navigasi berwarna biru dan tombol aktif.
+
+```css
+nav {
+  background-color: #1f5faa;
+}
 nav a {
   color: white;
   padding: 15px 30px;
   display: inline-block;
   text-decoration: none;
+  font-weight: bold;
 }
-nav a.active, nav a:hover { background-color: #2b83ea; }
+nav a:hover, nav a.active {
+  background-color: #2b83ea;
+}
+```
 
-/* Hero */
+**Hasil Tahap 3:**
+Navigasi sudah berwarna biru dengan efek hover dan tampilan aktif pada menu **Home**.
+
+<img width="679" height="409" alt="layout sederhana3" src="https://github.com/user-attachments/assets/1dcf7366-f4f8-45d1-b565-df1b35630d99" />
+
+---
+
+## Tahap 4 – Menambahkan Hero Section
+
+Tambahkan bagian **Hero** berisi judul dan teks sambutan menggunakan `<section id="hero">`.
+
+```html
+<section id="hero">
+  <h1>Hello World!</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+  <a href="#" class="btn">Learn more »</a>
+</section>
+```
+
+Dan tambahkan CSS:
+
+```css
 #hero {
   background-color: #e4e4e5;
   padding: 50px 20px;
   margin-bottom: 20px;
 }
+#hero h1 { font-size: 35px; }
+```
 
-/* Layout */
-#main { float: left; width: 640px; padding: 20px; }
-#sidebar { float: left; width: 260px; padding: 20px; }
-footer {
-  clear: both;
-  background-color: #1d1d1d;
-  color: #eee;
+**Hasil Tahap 4:**
+Tampilan menampilkan area hero dengan teks dan tombol link.
+
+<img width="1346" height="595" alt="layout sederhana4" src="https://github.com/user-attachments/assets/30d6d5b3-6223-45fe-974d-903761cc33be" />
+
+---
+
+## Tahap 5 – Menambahkan Sidebar Widget
+
+Tambahkan elemen `<aside>` dengan beberapa widget.
+
+```html
+<aside id="sidebar">
+  <div class="widget-box">
+    <h3 class="title">Widget Header</h3>
+    <ul>
+      <li><a href="#">Widget Link</a></li>
+      <li><a href="#">Widget Link</a></li>
+      <li><a href="#">Widget Link</a></li>
+      <li><a href="#">Widget Link</a></li>
+      <li><a href="#">Widget Link</a></li>
+    </ul>
+  </div>
+  <div class="widget-box">
+    <h3 class="title">Widget Text</h3>
+    <p>Vestibulum lorem elit, iaculis in nisl volutpat...</p>
+  </div>
+</aside>
+```
+
+**Hasil Tahap 5:**
+Tampilan sudah memiliki sidebar di sisi kanan dengan area widget.
+
+<img width="1149" height="720" alt="layout sederhana5" src="https://github.com/user-attachments/assets/b192df54-4919-4360-a1f7-8246cf4a8a4b" />
+
+---
+
+## Tahap 6 – Menambahkan Box Content pada Main
+
+Tambahkan 3 box konten dalam `<section id="main">`.
+
+```html
+<div class="box">
+  <img src="https://dummyimage.com/120/db7d25/fff.png" class="image-circle">
+  <h3>Heading</h3>
+  <p>Donec sed odio dui...</p>
+  <a href="#">View detail</a>
+</div>
+```
+
+Dan CSS:
+
+```css
+.box {
+  float: left;
+  width: 33.3%;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
+}
+.image-circle { border-radius: 50%; }
+```
+
+**Hasil Tahap 6:**
+Tampilan menampilkan tiga box berjejer rapi di bawah hero panel.
+
+<img width="1108" height="718" alt="layout sederhana6" src="https://github.com/user-attachments/assets/35a356db-0737-448b-afd3-1dbcd86fd0f1" />
+
+
+---
+
+## Tahap 7 – Menambahkan Artikel dan Tampilan Akhir
+
+Tambahkan artikel dengan gambar di sisi kiri dan kanan serta divider pemisah.
+
+```html
+<article class="entry">
+  <h2>First featurette heading.</h2>
+  <img src="https://dummyimage.com/150/7b8a70/fff.png" alt="">
+  <p>Lorem ipsum dolor sit amet...</p>
+</article>
+```
+
+Tambahkan CSS:
+
+```css
+.entry img {
+  float: left;
+  margin-right: 15px;
+  border-radius: 5px;
+}
+.divider {
+  border-top: 1px solid #eee;
+  margin: 40px 0;
 }
 ```
 
-🖼️ **Gambar 9.1** – Hasil layout lengkap setelah CSS diterapkan
-![Gambar 9.1](screenshots/gambar9.png)
+📸 **Hasil Tahap 7:**
+Layout web sudah lengkap — terdiri dari header, navigasi, hero, konten utama, sidebar, dan footer.
 
-**Penjelasan:**
-CSS di atas mengatur warna, jarak, dan posisi elemen dengan properti **float** dan **width**.
-Font menggunakan **Open Sans** dari Google Fonts.
+<img width="1069" height="679" alt="layout sederhana7" src="https://github.com/user-attachments/assets/660687d1-ab2a-4674-8bc3-967fae6a4411" />
 
 ---
+**Hasil MenambahKan Menu About Dan Kontak**
+<p>About</p>
+<img width="1215" height="719" alt="hasil tambahan about" src="https://github.com/user-attachments/assets/612a8bf0-bf87-492e-8ea6-4976bc25f522" />
 
-## ✅ **Hasil Akhir Layout Web**
+<p>Kontak</p>
 
-| Halaman       | Deskripsi                                      | Screenshot                        |
-| ------------- | ---------------------------------------------- | --------------------------------- |
-| `home.html`   | Halaman utama berisi hero, konten, dan sidebar | ![Home](screenshots/home.png)     |
-| `about.html`  | Halaman tentang dengan deskripsi dan portfolio | ![About](screenshots/about.png)   |
-| `kontak.html` | Halaman kontak dengan form isian               | ![Kontak](screenshots/kontak.png) |
+<img width="1139" height="671" alt="hasil tambahan kontak" src="https://github.com/user-attachments/assets/f2219689-0e6a-4b42-99b7-09c6a3fd1e04" />
 
----
+## Kesimpulan
 
-## 📎 **Kesimpulan**
+Dari praktikum ini, telah dipelajari bagaimana:
 
-Dari hasil praktikum ini dapat disimpulkan:
+* Menggunakan **CSS float** dan **clear** untuk mengatur posisi elemen.
+* Memanfaatkan **HTML5 semantic elements** dalam pembuatan layout.
+* Menggabungkan HTML dan CSS menjadi satu tampilan web yang rapi dan terstruktur.
 
-1. Struktur layout web dapat dibuat dengan kombinasi elemen semantik HTML5 dan CSS.
-2. Properti **float** dan **width** digunakan untuk mengatur tata letak dua kolom (main dan sidebar).
-3. Dengan satu file CSS (`style.css`), tampilan tiga halaman (`home`, `about`, `kontak`) dapat dijaga konsisten.
-4. Mahasiswa mampu membuat layout web sederhana yang elegan dan responsif.
-
----
-
-## 🔗 **Link Repository GitHub**
-
-[👉 https://github.com/username/Lab4Web](https://github.com/username/Lab4Web)
-*(Ganti `username` dengan akun GitHub kamu)*
-
----
-
-## ✨ **Catatan Tambahan**
-
-* Semua file (`home.html`, `about.html`, `kontak.html`, `style.css`) berada di folder yang sama.
-* Pastikan URL Google Fonts ditulis satu baris agar tidak error.
-* File HTML bisa diuji di browser menggunakan ekstensi **Live Server** pada VS Code.
-
----
-
-Apakah kamu mau saya bantu **buatkan versi PDF-nya langsung dari laporan ini** (lengkap dengan placeholder gambar dan format rapi siap dikumpulkan)?
